@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar { display: none }
+
+:root {
+    --light: #DEF5E5;
+    --light-mid: #BCEAD5;
+    --mid: #9ED5C5;
+    --dark: #8EC3B0;
+    --matte-black: #28282b;
+    --black: #000;
+}
+
+html { font-size: 62.5% }
+
+body {
+    position: relative;
+    width: 100vw;
+    margin: 0;
+    color: var(--matte-black);
+    background: var(--light);
+    font-family: 'Nunito Sans';
+    font-size: 1.5em;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*  Check at width: 660px - 740px 
+    Affects width of header and main
+*/
+
+h1, h2, h3, p, li, a { font-family: 'Nunito Sans' }
+
+a { text-decoration: none }
+
+.return-to-top {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.2rem;
+    width: 4.8rem;
+    height: 3.6rem;
+
+}
+
+.hidden { display: none }
+
+header {
+    width: 100vw;
+    padding: 1.2rem 2.4rem;
+    color: var(--light);
+    background: var(--dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 { 
+    margin: 0;
+    border-bottom: 0.1rem solid var(--light);
+}
+
+.select {
+    width: 24rem;
+    height: 3.2rem;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 5;
+}
+
+#toggle-select {
+    width: 100%;
+    height: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 0.1rem solid var(--light);
+    outline: none;
+    color: var(--shade);
+    background: var(--dark);
+    font-family: 'Nunito Sans';
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#toggle-select .closed { transform: rotate(180deg) }
+#toggle-select .open { transform: rotate(90deg) }
+
+.select .content {
+    width: 100%;
+    background: var(--light-mid);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-100%);
+}
+
+.select .content a {
+    color: var(--matte-black);
+    font-family: 'Nunito Sans';
+    text-decoration: none;
+}
+
+.select.expand .content {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+    transition: opacity 0.1s ease-in; 
+}
+
+.select.expand .content a {
+    width: 100%;
+    padding: 0.8rem 0 0.8rem 1.2rem;
+    border: 0.1rem solid transparent;
+}
+
+.select.expand .content a:hover { 
+    background: var(--mid) 
+}
+
+@media screen and (width <= 450px) {
+    .mobile-no-display { display: none }
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    width: 100%;
+    min-height: 50vh;
+    padding: 4.8rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .container {
+    width: 95%;
+    max-width: 64rem;
+    padding: 2.4rem;
+    border: 0.3rem solid var(--light-mid);
+    border-radius: 1.2rem;
+    background: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 1.8rem;
+    font-weight: 200;
+    line-height: 1.1;
+}
+
+.banner p:first-of-type { 
+    font-weight: bold;
+    line-height: 1.2 
+}
+
+.banner p:first-of-type::first-letter {
+    margin-right: 0.3rem;
+    padding: 0 0.3rem;
+    border: 0.1rem solid var(--dark);
+    border-radius: 0.3rem;
+    color: var(--dark);
+    font-size: 3.3rem;
+}
+
+.banner strong { color: var(--dark) }
+
+.banner a { 
+    padding: 0 0.4rem;
+    border: 0.1rem solid var(--light);
+    border-radius: 0.4rem;
+    color: var(--matte-black);
+    background: var(--light);
+}
+
+.banner a:hover { 
+    border: 0.1rem solid var(--mid);
+    color: var(--light);
+    background: var(--mid);
+    font-weight: 400
+}
+
+section {
+    width: 100%;
+    max-width: 84rem;
+    margin: 0 auto;
+}
+
+.heading { 
+    width: 100%;
+    margin: 2.4rem 0;
+    display: grid;
+    grid-template-columns: 1fr 14rem;
+}
+
+.heading a { 
+    width: 100%;
+    padding: 1.2rem 2.4rem;
+    color: var(--dark);
+    background: var(--light-mid);
+    display: block;
+}
+
+.heading a:last-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.heading a:hover {
+    color: var(--light);
+    background: var(--mid);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+figure {
+    position: relative;
+    width: 32rem;
+    height: 32rem;
+    border-radius: 1.2rem;
+    overflow: hidden;
+}
+
+figure img {
+    width: auto;
+    height: 100%;
+}
+
+figcaption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1.2rem;
+    color: var(--matte-black);
+    background: var(--light-mid);
+    transform: translateY(-100%);
+    transition: all 0.2s;
+}
+
+figcaption a { 
+    padding: 0 0.4rem;
+    border: 0.1rem solid var(--light);
+    border-radius: 0.4rem;
+    color: var(--matte-black);
+    background: var(--light);
+}
+
+figcaption a:hover { 
+    border: 0.1rem solid var(--mid);
+    color: var(--light);
+    background: var(--mid);
+}
+
+figure:hover figcaption {
+    transform: translateY(0);
+}
