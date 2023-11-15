@@ -51,6 +51,13 @@ The layouts and elements listed below are standard across pages
 
 ## Complete Setup
 
+This project uses vite (vanilla) for setting up a dev server. It is a static website that does not make use of any js frameworks, meaning it is just folders with index.html files.
+
+1. Fork project (unless added as contributor)
+2. Clone to workspace
+3. Run ```npm install```
+4. To launch the dev server: ```npm run dev```
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
