@@ -9,11 +9,15 @@
 
 body {
     color: var(--matte-black);
-    background: var(--light);
+    background: #eaf5ed;
     font-family: 'Nunito Sans';
 }
 /*  Check at width: 660px - 740px 
     Affects width of header and main
+*/
+
+/* ---------------------------------------------------------------------- HEADER
+length: 80 characters
 */
 
 header {
@@ -97,6 +101,76 @@ h1 {
     .mobile-no-display { display: none }
 }
 
+/* -------------------------------------------------------------------- MEGATRON
+*/
+
+.megatron {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 3.2rem);
+    background: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.megatron .container {
+    position: absolute;
+    top: 20%;
+    width: 85%;
+    max-width: 64rem;
+    padding: 2.4rem;
+    border: 0.3rem solid var(--dark);
+    border-radius: 1.8rem;
+    font-size: 2rem;
+    text-align: justify;
+    line-height: 1.1;
+}
+
+.megatron a { color: var(--dark) }
+.megatron a:hover { color: var(--matte-black) }
+
+.megatron .question {
+    position: absolute;
+    left: -2.4rem;
+    bottom: -25%;
+    padding: 1.2rem 1.8rem;
+    border: 0.1rem solid var(--dark);
+    border-radius: 1.8rem;
+    background: #eee;
+    font-size: 1.8rem;
+}
+
+.megatron .answer {
+    position: absolute;
+    left: 25%;
+    right: -35%;
+    top: 75%;
+    padding: 1.2rem 1.8rem;
+    border: 0.1rem solid var(--mid);
+    border-radius: 1.8rem;
+    background: #eee;
+    font-size: 1.6rem;
+}
+
+@media screen and (width <= 550px) {
+    .megatron .question {
+        left: -0.3rem;
+        width: calc(100% + 0.6rem);
+        border-width: 0.3rem;
+    }
+
+    .megatron .answer {
+        left: -0.3rem;
+        right: 0;
+        width: calc(100% + 0.6rem);
+        border-width: 0.3rem;
+    }
+}
+
+/* ------------------------------------------------------------------------ MAIN
+*/
+
 main {
     width: 100%;
     display: flex;
@@ -104,66 +178,10 @@ main {
     align-items: center;
 }
 
-.banner {
-    width: 100%;
-    min-height: 50vh;
-    padding: 4.8rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner .container {
-    width: 95%;
-    max-width: 64rem;
-    padding: 2.4rem;
-    border: 0.3rem solid var(--light-mid);
-    border-radius: 1.2rem;
-    background: #fff;
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.banner p {
-    font-size: 1.8rem;
-    font-weight: 200;
-    line-height: 1.1;
-}
-
-.banner p:first-of-type { 
-    font-weight: bold;
-    line-height: 1.2 
-}
-
-.banner p:first-of-type::first-letter {
-    margin-right: 0.3rem;
-    padding: 0 0.3rem;
-    border: 0.1rem solid var(--dark);
-    border-radius: 0.3rem;
-    color: var(--dark);
-    font-size: 3.3rem;
-}
-
-.banner strong { color: var(--dark) }
-
-.banner a { 
-    padding: 0 0.4rem;
-    border: 0.1rem solid var(--light);
-    border-radius: 0.4rem;
-    color: var(--matte-black);
-    background: var(--light);
-}
-
-.banner a:hover { 
-    border: 0.1rem solid var(--mid);
-    color: var(--light);
-    background: var(--mid);
-    font-weight: 400
-}
-
 section {
+    position: relative;
     width: 100%;
-    max-width: 84rem;
+    max-width: 98.4rem;
     margin: 0 auto;
 }
 
@@ -177,15 +195,30 @@ section {
 .heading a { 
     width: 100%;
     padding: 1.2rem 2.4rem;
-    color: var(--dark);
-    background: var(--light-mid);
     display: block;
 }
 
+.heading a:first-of-type { 
+    border-left: 0.1rem solid transparent;
+    color: var(--dark);
+}
+.heading a:first-of-type:hover { 
+    border-left-color: var(--matte-black);
+    color: var(--matte-black);
+}
+
 .heading a:last-of-type {
+    border-radius: 1.8rem;
+    color: var(--dark);
+    background: var(--light-mid);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.heading a:last-of-type:hover {
+    color: var(--light);
+    background: var(--mid);
 }
 
 .heading h2 {
@@ -193,15 +226,10 @@ section {
     padding: 0;
 }
 
-.heading a:hover {
-    color: var(--light);
-    background: var(--mid);
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-    gap: 2rem;
+    gap: 1.2rem;
     justify-items: center;
 }
 
@@ -245,4 +273,28 @@ figcaption a:hover {
 
 figure:hover figcaption {
     transform: translateY(0);
+}
+
+/* ---------------------------------------------------------------------- FOOTER
+*/
+
+footer {
+    width: 100%;
+    margin-top: 3.6rem;
+    color: var(--light);
+    background: var(--dark);
+    font-size: 1.8rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer a { color: var(--matte-black) }
+footer a:hover { color: var(--light) }
+
+.contact {
+    margin-right: 1.2rem;
+    padding: 0.4rem 0.8rem;
+    border: 0.1rem solid var(--light);
+    border-radius: 1.2rem;
 }

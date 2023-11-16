@@ -19,11 +19,16 @@ The layouts and elements listed below are standard across pages
 - Megatron
   - Above the fold
   - Divider
+- Navigation
 - Features
-- Grid
+- Gallery
+- Blog
 - Documentation
   - Split-screen: stationary and scrolling content
   - Menu and scrolling content
+- News
+  - Traditional newspaper
+  - Modern news app/site
 
 ### Elements
 
